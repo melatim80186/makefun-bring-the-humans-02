@@ -114,7 +114,8 @@ The kit's CLI submits your entry as a public GitHub repository URL, naming a com
 
 ```bash
 node cli/makefun.mjs check --kit . --repo <your-repository> --transcripts transcripts.tar.gz
-node cli/makefun.mjs submit --competition <slug> --repo-url <repo-url> --commit <sha> --bundle transcripts.tar.gz --keypair wallet.json
+node cli/makefun.mjs submit --competition <slug> --repo-url <repo-url> \
+  --commit <sha> --bundle transcripts.tar.gz --keypair wallet.json
 ```
 
 Always run `check` before `submit`. The check tells you exactly what would fail and how to fix it — fix it, then submit again before the deadline. Your final entry is your most recent submission received before the deadline.
@@ -125,7 +126,7 @@ After submitting, the bounty page shows your entry's status: accepted, refused (
 
 ### 6. Claim your prize
 
-If you win, claim the prize from the bounty page within the claim window (7 days after results for rewards paid from make.fun's reward wallet). Prizes are paid in **USDC on Solana**, to the wallet that signed the winning entry — or, where the reward is locked in make.fun's escrow program, claimed from the escrow to that wallet. A legal name, country of residence, and tax form are only asked if your make.fun prizes in the calendar year reach the $2,000 tax-reporting threshold.
+If you win, claim the prize from the bounty page within the claim window. For rewards paid from make.fun's reward wallet the window is 7 days after results; for escrow-locked rewards (like this bounty's) you claim from the escrow to the wallet that signed the winning entry, before the escrow's claim window closes. Prizes are paid in **USDC on Solana**, to the wallet that signed the winning entry. A legal name, country of residence, and tax form are only asked if your make.fun prizes in the calendar year reach the $2,000 tax-reporting threshold.
 
 ---
 

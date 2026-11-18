@@ -14,6 +14,8 @@ Referral code: **`zkqrkpbx`**
 
 Signing up through that link connects your new account to my referral code, so this guide — and the community behind it — keeps growing. It costs you nothing: joining make.fun is free, and entering this bounty is free too.
 
+**What this guide covers:** what make.fun is, how to set up your account and link GitHub, and how to find a bounty, build an entry with an AI agent, submit it, and claim a prize if you win. No coding experience needed to follow along.
+
 ---
 
 ## What is make.fun?
@@ -108,11 +110,11 @@ Then build, in your own session:
 
 ### 4. Submit with the kit CLI
 
-The kit's CLI submits your entry as a public GitHub repository URL, naming a commit, together with the transcripts of the sessions that built it:
+The kit's CLI submits your entry as a public GitHub repository URL, naming a commit, together with the transcripts of the sessions that built it. The entry is signed with the Solana keypair whose wallet is the payout wallet:
 
 ```bash
 node cli/makefun.mjs check --kit . --repo <your-repository> --transcripts transcripts.tar.gz
-node cli/makefun.mjs submit --kit . --repo <your-repository> --transcripts transcripts.tar.gz
+node cli/makefun.mjs submit --competition <slug> --repo-url <repo-url> --commit <sha> --bundle transcripts.tar.gz --keypair wallet.json
 ```
 
 Always run `check` before `submit`. The check tells you exactly what would fail and how to fix it — fix it, then submit again before the deadline. Your final entry is your most recent submission received before the deadline.
@@ -133,8 +135,8 @@ make.fun has a standing referral program, separate from any single bounty:
 
 - Your referral code lives on the **Referrals tab** of your profile.
 - Your link is `make.fun/r/<code>` — mine is **[https://make.fun/r/zkqrkpbx](https://make.fun/r/zkqrkpbx)** (code: `zkqrkpbx`). Adding `?ref=<code>` to any make.fun link carries the same code.
-- When a new account signs up while your code is bound to their browser, that signup is credited to you — if it passes make.fun's verification (real human, active account; fake or bot signups never count).
-- Referral rewards are paid in USDC on Solana, subject to the program's cap and budget.
+- When a new account signs up while your code is bound to their browser, that signup is credited to you — if it passes make.fun's verification (a real human, an active account; fake or bot signups never count).
+- Referral rewards are paid under the program's own terms, subject to its cap and budget. Note the contest score is different: a verified signup counts toward your entry even when the referral reward cap or budget is already spent.
 
 This bounty is built on that program: your entry's score is simply how many verified human signups your referral link brings in before the deadline.
 
